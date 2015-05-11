@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<enemy>
+    <behaviour>
+        <root x="110" y="40">
+            <normal>
+                <condition id="hasTarget">
+                    <string id="condition" values="yesno">yes</string>
+                    <normal>
+                        <action id="selectTargetWaypoint" />
+                        <condition id="isTargetInArea">
+                            <string id="condition" values="yesno">yes</string>
+                            <float id="xOffset">0.00</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.50</float>
+                            <float id="height">0.50</float>
+                            <string id="check line of sight" values="yesno">yes</string>
+                            <string id="ignore invisibility" values="yesno">no</string>
+                            <string id="Comment">Aim stick to cause movement towards target horizontally over small distances</string>
+                            <normal>
+                                <action id="aimStickAtTarget">
+                                    <float id="duration seconds">0.00</float>
+                                    <string id="only aim when needed" values="yesno">no</string>
+                                    <string id="use rotation speed limits" values="yesno">no</string>
+                                    <float id="min rotation speed per second in degrees">0.00</float>
+                                    <float id="max rotation speed per second in degrees">0.00</float>
+                                    <float id="use min rotation speed when angle to target under">0.00</float>
+                                    <float id="use max rotation speed when angle to target over">0.00</float>
+                                </action>
+                            </normal>
+                        </condition>
+                        <action id="executeBehaviourTree">
+                            <string id="fileName">Mod_Foxlessv2_GoToWaypoint</string>
+                            <string id="Minimized">yes</string>
+                        </action>
+                    </normal>
+                    <else>
+                        <action id="setBool">
+                            <string id="id">failed</string>
+                            <string id="value" values="flagtoggle">yes</string>
+                        </action>
+                    </else>
+                </condition>
+            </normal>
+        </root>
+    </behaviour>
+</enemy>
