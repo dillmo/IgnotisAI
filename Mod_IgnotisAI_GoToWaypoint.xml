@@ -304,6 +304,12 @@
                                                             </else>
                                                         </condition>
                                                     </normal>
+                                                    <else>
+                                                        <action id="setBool">
+                                                            <string id="id">failed</string>
+                                                            <string id="value" values="flagtoggle">yes</string>
+                                                        </action>
+                                                    </else>
                                                 </condition>
                                             </else>
                                             <or>
