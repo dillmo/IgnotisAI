@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<enemy>
+    <behaviour>
+        <root x="110" y="40">
+            <normal>
+                <action id="selectDestWaypoint">
+                    <string id="name">regenHome</string>
+                    <string id="team" values="ownenemy">OWN_TEAM</string>
+                </action>
+                <action id="executeBehaviourTree">
+                    <string id="fileName">Mod_IgnotisAI_GoToWaypoint</string>
+                    <string id="Minimized">yes</string>
+                </action>
+            </normal>
+        </root>
+    </behaviour>
+</enemy>
