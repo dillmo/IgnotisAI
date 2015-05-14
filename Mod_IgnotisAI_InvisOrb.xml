@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<enemy>
+    <behaviour>
+        <root x="110" y="40">
+            <normal>
+                <condition id="isPickupAtWaypoint">
+                    <string id="name">invisbilityItem</string>
+                    <string id="team" values="ownenemy">OWN_TEAM</string>
+                    <normal>
+                        <action id="selectDestWaypoint">
+                            <string id="name">invisbilityItem</string>
+                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                        </action>
+                        <action id="executeBehaviourTree">
+                            <string id="fileName">Mod_IgnotisAI_GoToWaypoint</string>
+                            <string id="Minimized">yes</string>
+                        </action>
+                    </normal>
+                    <else>
+                        <action id="setBool">
+                            <string id="id">failed</string>
+                            <string id="value" values="flagtoggle">yes</string>
+                        </action>
+                    </else>
+                </condition>
+            </normal>
+        </root>
+    </behaviour>
+</enemy>
