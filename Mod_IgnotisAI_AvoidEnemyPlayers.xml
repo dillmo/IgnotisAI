@@ -17,7 +17,7 @@
                     <string id="ignore invisibility" values="yesno">no</string>
                     <normal>
                         <action id="executeBehaviourTree">
-                            <string id="fileName">Mod_IgnotisAI_GoToShop</string>
+                            <string id="fileName">Mod_IgnotisAI_FallBack</string>
                             <string id="Minimized">yes</string>
                         </action>
                     </normal>
