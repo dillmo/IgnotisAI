@@ -1,0 +1,423 @@
+<?xml version="1.0" ?>
+<enemy>
+    <behaviour>
+        <root x="110" y="40">
+            <normal>
+                <action id="setBool">
+                    <string id="id">failed</string>
+                    <string id="value" values="flagtoggle">yes</string>
+                    <string id="Comment">Default; may change later</string>
+                </action>
+                <condition id="getBoolEquals">
+                    <string id="id">dontChooseLane</string>
+                    <string id="value" values="yesno">no</string>
+                    <normal>
+                        <orblock>
+                            <string id="Comment">Check lane</string>
+                            <normal>
+                                <action id="adjustCounter">
+                                    <string id="id">lane</string>
+                                    <string id="value">1</string>
+                                    <string id="adjust method" values="valueadjust">set</string>
+                                    <string id="Comment">At top lane</string>
+                                </action>
+                            </normal>
+                            <else>
+                                <orblock>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">lane</string>
+                                            <string id="value">2</string>
+                                            <string id="adjust method" values="valueadjust">set</string>
+                                            <string id="Comment">At bottom lane</string>
+                                        </action>
+                                    </normal>
+                                    <else>
+                                        <action id="adjustCounter">
+                                            <string id="id">lane</string>
+                                            <string id="value">0</string>
+                                            <string id="adjust method" values="valueadjust">set</string>
+                                            <string id="Comment">Not in a lane</string>
+                                        </action>
+                                    </else>
+                                    <or>
+                                        <condition id="isInNamedArea">
+                                            <string id="area name">areaBottom_0</string>
+                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                            <string id="who" values="targetself">self</string>
+                                        </condition>
+                                        <condition id="isInNamedArea">
+                                            <string id="area name">areaCenterBottom</string>
+                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                            <string id="who" values="targetself">self</string>
+                                        </condition>
+                                        <condition id="isInNamedArea">
+                                            <string id="area name">areaBottom_1</string>
+                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                            <string id="who" values="targetself">self</string>
+                                        </condition>
+                                    </or>
+                                </orblock>
+                            </else>
+                            <or>
+                                <condition id="isInNamedArea">
+                                    <string id="area name">areaUpper_0</string>
+                                    <string id="team" values="ownenemy">OWN_TEAM</string>
+                                    <string id="who" values="targetself">self</string>
+                                </condition>
+                                <condition id="isInNamedArea">
+                                    <string id="area name">areaCenter</string>
+                                    <string id="team" values="ownenemy">OWN_TEAM</string>
+                                    <string id="who" values="targetself">self</string>
+                                </condition>
+                                <condition id="isInNamedArea">
+                                    <string id="area name">areaUpper_1</string>
+                                    <string id="team" values="ownenemy">OWN_TEAM</string>
+                                    <string id="who" values="targetself">self</string>
+                                </condition>
+                            </or>
+                        </orblock>
+                        <condition id="getBoolEquals">
+                            <string id="id">false</string>
+                            <string id="value" values="yesno">no</string>
+                            <string id="Comment">set towers alive</string>
+                            <normal>
+                                <orblock>
+                                    <string id="Comment">different teams - diff named areas - same meaning</string>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">enemyTower1Lane1</string>
+                                            <string id="value" values="flagtoggle">no</string>
+                                        </action>
+                                    </normal>
+                                    <else>
+                                        <action id="setBool">
+                                            <string id="id">enemyTower1Lane1</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                    </else>
+                                    <or>
+                                        <condition id="isInNamedArea">
+                                            <string id="area name">DEURBLAUW3</string>
+                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                            <string id="who" values="targetself">self</string>
+                                        </condition>
+                                        <condition id="isInNamedArea">
+                                            <string id="area name">DEURROOD3</string>
+                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                            <string id="who" values="targetself">self</string>
+                                        </condition>
+                                    </or>
+                                </orblock>
+                                <orblock>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">enemyTower2Lane1</string>
+                                            <string id="value" values="flagtoggle">no</string>
+                                        </action>
+                                    </normal>
+                                    <else>
+                                        <action id="setBool">
+                                            <string id="id">enemyTower2Lane1</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                    </else>
+                                    <or>
+                                        <condition id="isInNamedArea">
+                                            <string id="area name">DEURBLAUW2</string>
+                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                            <string id="who" values="targetself">self</string>
+                                        </condition>
+                                        <condition id="isInNamedArea">
+                                            <string id="area name">DEURROOD2</string>
+                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                            <string id="who" values="targetself">self</string>
+                                        </condition>
+                                    </or>
+                                </orblock>
+                                <orblock>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">enemyTower2Lane2</string>
+                                            <string id="value" values="flagtoggle">no</string>
+                                        </action>
+                                    </normal>
+                                    <else>
+                                        <action id="setBool">
+                                            <string id="id">enemyTower2Lane2</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                    </else>
+                                    <or>
+                                        <condition id="isInNamedArea">
+                                            <string id="area name">DEURBLAUW1</string>
+                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                            <string id="who" values="targetself">self</string>
+                                        </condition>
+                                        <condition id="isInNamedArea">
+                                            <string id="area name">DEURROOD1</string>
+                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                            <string id="who" values="targetself">self</string>
+                                        </condition>
+                                    </or>
+                                </orblock>
+                                <orblock>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">enemyTower1Lane2</string>
+                                            <string id="value" values="flagtoggle">no</string>
+                                        </action>
+                                    </normal>
+                                    <else>
+                                        <action id="setBool">
+                                            <string id="id">enemyTower1Lane2</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                    </else>
+                                    <or>
+                                        <condition id="isInNamedArea">
+                                            <string id="area name">DEURBLAUW4</string>
+                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                            <string id="who" values="targetself">self</string>
+                                        </condition>
+                                        <condition id="isInNamedArea">
+                                            <string id="area name">DEURROOD4</string>
+                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                            <string id="who" values="targetself">self</string>
+                                        </condition>
+                                    </or>
+                                </orblock>
+                            </normal>
+                        </condition>
+                        <condition id="checkCounter">
+                            <string id="id">lane</string>
+                            <string id="value">0</string>
+                            <string id="compare method" values="valuecompare">greater</string>
+                            <string id="Comment">In lane?</string>
+                            <normal>
+                                <condition id="checkCounter">
+                                    <string id="id">lane</string>
+                                    <string id="value">1</string>
+                                    <string id="compare method" values="valuecompare">equal</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">lane</string>
+                                            <string id="value">2</string>
+                                            <string id="adjust method" values="valueadjust">set</string>
+                                        </action>
+                                    </normal>
+                                    <else>
+                                        <action id="adjustCounter">
+                                            <string id="id">lane</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">set</string>
+                                        </action>
+                                    </else>
+                                </condition>
+                            </normal>
+                            <else>
+                                <condition id="random">
+                                    <string id="amount">2</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">lane</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">set</string>
+                                        </action>
+                                    </normal>
+                                    <else>
+                                        <action id="adjustCounter">
+                                            <string id="id">lane</string>
+                                            <string id="value">2</string>
+                                            <string id="adjust method" values="valueadjust">set</string>
+                                        </action>
+                                    </else>
+                                </condition>
+                            </else>
+                        </condition>
+                        <condition id="checkCounter">
+                            <string id="id">lane</string>
+                            <string id="value">1</string>
+                            <string id="compare method" values="valuecompare">equal</string>
+                            <string id="Comment">Set destination</string>
+                            <normal>
+                                <condition id="getBoolEquals">
+                                    <string id="id">enemyTower1Lane1</string>
+                                    <string id="value" values="yesno">yes</string>
+                                    <normal>
+                                        <action id="selectDestWaypoint">
+                                            <string id="name">UPPERLANE</string>
+                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                        </action>
+                                    </normal>
+                                    <else>
+                                        <condition id="getBoolEquals">
+                                            <string id="id">enemyTower2Lane1</string>
+                                            <string id="value" values="yesno">yes</string>
+                                            <normal>
+                                                <action id="selectDestWaypoint">
+                                                    <string id="name">UPPERLANESECOND</string>
+                                                    <string id="team" values="ownenemy">ENEMY_TEAM</string>
+                                                </action>
+                                                <condition id="isNextWaypointInArea">
+                                                    <float id="xOffset">0.00</float>
+                                                    <float id="yOffset">0.00</float>
+                                                    <float id="width">2.00</float>
+                                                    <float id="height">2.00</float>
+                                                    <else>
+                                                        <action id="selectDestWaypoint">
+                                                            <string id="name">UPPERLANE</string>
+                                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                                        </action>
+                                                    </else>
+                                                </condition>
+                                            </normal>
+                                            <else>
+                                                <condition id="getBoolEquals">
+                                                    <string id="id">enemyTower3</string>
+                                                    <string id="value" values="yesno">yes</string>
+                                                    <normal>
+                                                        <action id="selectDestWaypoint">
+                                                            <string id="name">FINALSTAND</string>
+                                                            <string id="team" values="ownenemy">ENEMY_TEAM</string>
+                                                        </action>
+                                                        <condition id="isNextWaypointInArea">
+                                                            <float id="xOffset">0.00</float>
+                                                            <float id="yOffset">0.00</float>
+                                                            <float id="width">2.00</float>
+                                                            <float id="height">2.00</float>
+                                                            <else>
+                                                                <action id="selectDestWaypoint">
+                                                                    <string id="name">UPPERLANESECOND</string>
+                                                                    <string id="team" values="ownenemy">ENEMY_TEAM</string>
+                                                                </action>
+                                                            </else>
+                                                        </condition>
+                                                        <condition id="isNextWaypointInArea">
+                                                            <float id="xOffset">0.00</float>
+                                                            <float id="yOffset">0.00</float>
+                                                            <float id="width">2.00</float>
+                                                            <float id="height">2.00</float>
+                                                            <else>
+                                                                <action id="selectDestWaypoint">
+                                                                    <string id="name">UPPERLANE</string>
+                                                                    <string id="team" values="ownenemy">OWN_TEAM</string>
+                                                                </action>
+                                                            </else>
+                                                        </condition>
+                                                    </normal>
+                                                    <else>
+                                                        <action id="selectDestWaypoint">
+                                                            <string id="name">UPPERLANE</string>
+                                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                                        </action>
+                                                    </else>
+                                                </condition>
+                                            </else>
+                                        </condition>
+                                    </else>
+                                </condition>
+                            </normal>
+                            <else>
+                                <condition id="checkCounter">
+                                    <string id="id">lane</string>
+                                    <string id="value">2</string>
+                                    <string id="compare method" values="valuecompare">equal</string>
+                                    <normal>
+                                        <condition id="getBoolEquals">
+                                            <string id="id">enemyTower1Lane2</string>
+                                            <string id="value" values="yesno">yes</string>
+                                            <normal>
+                                                <action id="selectDestWaypoint">
+                                                    <string id="name">BOTTOMLANE</string>
+                                                    <string id="team" values="ownenemy">OWN_TEAM</string>
+                                                </action>
+                                            </normal>
+                                            <else>
+                                                <condition id="getBoolEquals">
+                                                    <string id="id">enemyTower2Lane2</string>
+                                                    <string id="value" values="yesno">yes</string>
+                                                    <normal>
+                                                        <action id="selectDestWaypoint">
+                                                            <string id="name">BOTTOMLANESECOND</string>
+                                                            <string id="team" values="ownenemy">ENEMY_TEAM</string>
+                                                        </action>
+                                                        <condition id="isNextWaypointInArea">
+                                                            <float id="xOffset">0.00</float>
+                                                            <float id="yOffset">0.00</float>
+                                                            <float id="width">2.00</float>
+                                                            <float id="height">2.00</float>
+                                                            <else>
+                                                                <action id="selectDestWaypoint">
+                                                                    <string id="name">BOTTOMLANE</string>
+                                                                    <string id="team" values="ownenemy">OWN_TEAM</string>
+                                                                </action>
+                                                            </else>
+                                                        </condition>
+                                                    </normal>
+                                                    <else>
+                                                        <condition id="getBoolEquals">
+                                                            <string id="id">enemyTower3</string>
+                                                            <string id="value" values="yesno">yes</string>
+                                                            <normal>
+                                                                <action id="selectDestWaypoint">
+                                                                    <string id="name">FINALSTAND</string>
+                                                                    <string id="team" values="ownenemy">ENEMY_TEAM</string>
+                                                                </action>
+                                                                <condition id="isNextWaypointInArea">
+                                                                    <float id="xOffset">0.00</float>
+                                                                    <float id="yOffset">0.00</float>
+                                                                    <float id="width">2.00</float>
+                                                                    <float id="height">2.00</float>
+                                                                    <else>
+                                                                        <action id="selectDestWaypoint">
+                                                                            <string id="name">BOTTOMLANESECOND</string>
+                                                                            <string id="team" values="ownenemy">ENEMY_TEAM</string>
+                                                                        </action>
+                                                                    </else>
+                                                                </condition>
+                                                                <condition id="isNextWaypointInArea">
+                                                                    <float id="xOffset">0.00</float>
+                                                                    <float id="yOffset">0.00</float>
+                                                                    <float id="width">2.00</float>
+                                                                    <float id="height">2.00</float>
+                                                                    <else>
+                                                                        <action id="selectDestWaypoint">
+                                                                            <string id="name">BOTTOMLANE</string>
+                                                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                                                        </action>
+                                                                    </else>
+                                                                </condition>
+                                                            </normal>
+                                                            <else>
+                                                                <action id="selectDestWaypoint">
+                                                                    <string id="name">BOTTOMLANE</string>
+                                                                    <string id="team" values="ownenemy">OWN_TEAM</string>
+                                                                </action>
+                                                            </else>
+                                                        </condition>
+                                                    </else>
+                                                </condition>
+                                            </else>
+                                        </condition>
+                                    </normal>
+                                </condition>
+                            </else>
+                        </condition>
+                    </normal>
+                </condition>
+                <action id="executeBehaviourTree">
+                    <string id="fileName">Mod_IgnotisAI_GoToWaypoint</string>
+                    <string id="Minimized">yes</string>
+                </action>
+            </normal>
+        </root>
+    </behaviour>
+    <behaviour>
+        <action id="adjustCounter" x="2241" y="2493">
+            <string id="id">lane</string>
+            <string id="value">2</string>
+            <string id="adjust method" values="valueadjust">set</string>
+        </action>
+    </behaviour>
+</enemy>
