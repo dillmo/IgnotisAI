@@ -268,7 +268,7 @@
                                             <normal>
                                                 <condition id="timer">
                                                     <string id="timeunit" values="timeunits">seconds</string>
-                                                    <float id="time">0.59</float>
+                                                    <float id="time">0.79</float>
                                                     <string id="execute first time" values="yesno">yes</string>
                                                     <else>
                                                         <action id="pressButton">
