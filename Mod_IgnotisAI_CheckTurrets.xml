@@ -1,0 +1,114 @@
+<?xml version="1.0" ?>
+<enemy>
+    <behaviour>
+        <root x="110" y="40">
+            <normal>
+                <orblock>
+                    <string id="Comment">different teams - diff named areas - same meaning</string>
+                    <normal>
+                        <action id="setBool">
+                            <string id="id">enemyTower1Lane1</string>
+                            <string id="value" values="flagtoggle">no</string>
+                        </action>
+                    </normal>
+                    <else>
+                        <action id="setBool">
+                            <string id="id">enemyTower1Lane1</string>
+                            <string id="value" values="flagtoggle">yes</string>
+                        </action>
+                    </else>
+                    <or>
+                        <condition id="isInNamedArea">
+                            <string id="area name">DEURBLAUW3</string>
+                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                            <string id="who" values="targetself">self</string>
+                        </condition>
+                        <condition id="isInNamedArea">
+                            <string id="area name">DEURROOD3</string>
+                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                            <string id="who" values="targetself">self</string>
+                        </condition>
+                    </or>
+                </orblock>
+                <orblock>
+                    <normal>
+                        <action id="setBool">
+                            <string id="id">enemyTower2Lane1</string>
+                            <string id="value" values="flagtoggle">no</string>
+                        </action>
+                    </normal>
+                    <else>
+                        <action id="setBool">
+                            <string id="id">enemyTower2Lane1</string>
+                            <string id="value" values="flagtoggle">yes</string>
+                        </action>
+                    </else>
+                    <or>
+                        <condition id="isInNamedArea">
+                            <string id="area name">DEURBLAUW2</string>
+                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                            <string id="who" values="targetself">self</string>
+                        </condition>
+                        <condition id="isInNamedArea">
+                            <string id="area name">DEURROOD2</string>
+                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                            <string id="who" values="targetself">self</string>
+                        </condition>
+                    </or>
+                </orblock>
+                <orblock>
+                    <normal>
+                        <action id="setBool">
+                            <string id="id">enemyTower2Lane2</string>
+                            <string id="value" values="flagtoggle">no</string>
+                        </action>
+                    </normal>
+                    <else>
+                        <action id="setBool">
+                            <string id="id">enemyTower2Lane2</string>
+                            <string id="value" values="flagtoggle">yes</string>
+                        </action>
+                    </else>
+                    <or>
+                        <condition id="isInNamedArea">
+                            <string id="area name">DEURBLAUW1</string>
+                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                            <string id="who" values="targetself">self</string>
+                        </condition>
+                        <condition id="isInNamedArea">
+                            <string id="area name">DEURROOD1</string>
+                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                            <string id="who" values="targetself">self</string>
+                        </condition>
+                    </or>
+                </orblock>
+                <orblock>
+                    <normal>
+                        <action id="setBool">
+                            <string id="id">enemyTower1Lane2</string>
+                            <string id="value" values="flagtoggle">no</string>
+                        </action>
+                    </normal>
+                    <else>
+                        <action id="setBool">
+                            <string id="id">enemyTower1Lane2</string>
+                            <string id="value" values="flagtoggle">yes</string>
+                        </action>
+                    </else>
+                    <or>
+                        <condition id="isInNamedArea">
+                            <string id="area name">DEURBLAUW4</string>
+                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                            <string id="who" values="targetself">self</string>
+                        </condition>
+                        <condition id="isInNamedArea">
+                            <string id="area name">DEURROOD4</string>
+                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                            <string id="who" values="targetself">self</string>
+                        </condition>
+                    </or>
+                </orblock>
+            </normal>
+        </root>
+    </behaviour>
+</enemy>
