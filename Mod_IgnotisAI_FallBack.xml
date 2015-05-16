@@ -7,6 +7,15 @@
                     <string id="name">regenHome</string>
                     <string id="team" values="ownenemy">OWN_TEAM</string>
                 </action>
+                <condition id="isNextWaypointPosition">
+                    <string id="position" values="offsetposition">BELOW</string>
+                    <else>
+                        <action id="setBool">
+                            <string id="id">jump</string>
+                            <string id="value" values="flagtoggle">yes</string>
+                        </action>
+                    </else>
+                </condition>
                 <action id="executeBehaviourTree">
                     <string id="fileName">Mod_IgnotisAI_GoToWaypoint</string>
                     <string id="Minimized">yes</string>
