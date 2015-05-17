@@ -18,7 +18,7 @@
                             <string id="Comment">Aim stick to cause movement towards target horizontally over small distances</string>
                             <normal>
                                 <action id="aimStickAtTarget">
-                                    <float id="duration seconds">0.00</float>
+                                    <float id="duration seconds">0.10</float>
                                     <string id="only aim when needed" values="yesno">no</string>
                                     <string id="use rotation speed limits" values="yesno">no</string>
                                     <float id="min rotation speed per second in degrees">0.00</float>
@@ -29,7 +29,7 @@
                             </normal>
                         </condition>
                         <action id="executeBehaviourTree">
-                            <string id="fileName">Mod_Foxlessv2_GoToWaypoint</string>
+                            <string id="fileName">Mod_IgnotisAI_GoToWaypoint</string>
                             <string id="Minimized">yes</string>
                         </action>
                     </normal>
