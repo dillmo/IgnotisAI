@@ -127,28 +127,52 @@
                                 </condition>
                             </else>
                         </condition>
-                        <condition id="checkCounter">
-                            <string id="id">lane</string>
-                            <string id="value">1</string>
-                            <string id="compare method" values="valuecompare">equal</string>
-                            <string id="Comment">Set destination</string>
+                    </normal>
+                </condition>
+                <condition id="checkCounter">
+                    <string id="id">lane</string>
+                    <string id="value">1</string>
+                    <string id="compare method" values="valuecompare">equal</string>
+                    <string id="Comment">Set destination</string>
+                    <normal>
+                        <condition id="getBoolEquals">
+                            <string id="id">enemyTower1Lane1</string>
+                            <string id="value" values="yesno">yes</string>
                             <normal>
+                                <action id="selectDestWaypoint">
+                                    <string id="name">UPPERLANE</string>
+                                    <string id="team" values="ownenemy">OWN_TEAM</string>
+                                </action>
+                            </normal>
+                            <else>
                                 <condition id="getBoolEquals">
-                                    <string id="id">enemyTower1Lane1</string>
+                                    <string id="id">enemyTower2Lane1</string>
                                     <string id="value" values="yesno">yes</string>
                                     <normal>
                                         <action id="selectDestWaypoint">
-                                            <string id="name">UPPERLANE</string>
-                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                            <string id="name">UPPERLANESECOND</string>
+                                            <string id="team" values="ownenemy">ENEMY_TEAM</string>
                                         </action>
+                                        <condition id="isNextWaypointInArea">
+                                            <float id="xOffset">0.00</float>
+                                            <float id="yOffset">0.00</float>
+                                            <float id="width">2.00</float>
+                                            <float id="height">2.00</float>
+                                            <else>
+                                                <action id="selectDestWaypoint">
+                                                    <string id="name">UPPERLANE</string>
+                                                    <string id="team" values="ownenemy">OWN_TEAM</string>
+                                                </action>
+                                            </else>
+                                        </condition>
                                     </normal>
                                     <else>
                                         <condition id="getBoolEquals">
-                                            <string id="id">enemyTower2Lane1</string>
+                                            <string id="id">enemyTower3</string>
                                             <string id="value" values="yesno">yes</string>
                                             <normal>
                                                 <action id="selectDestWaypoint">
-                                                    <string id="name">UPPERLANESECOND</string>
+                                                    <string id="name">FINALSTAND</string>
                                                     <string id="team" values="ownenemy">ENEMY_TEAM</string>
                                                 </action>
                                                 <condition id="isNextWaypointInArea">
@@ -158,7 +182,68 @@
                                                     <float id="height">2.00</float>
                                                     <else>
                                                         <action id="selectDestWaypoint">
+                                                            <string id="name">UPPERLANESECOND</string>
+                                                            <string id="team" values="ownenemy">ENEMY_TEAM</string>
+                                                        </action>
+                                                    </else>
+                                                </condition>
+                                                <condition id="isNextWaypointInArea">
+                                                    <float id="xOffset">0.00</float>
+                                                    <float id="yOffset">0.00</float>
+                                                    <float id="width">2.00</float>
+                                                    <float id="height">2.00</float>
+                                                    <else>
+                                                        <action id="selectDestWaypoint">
                                                             <string id="name">UPPERLANE</string>
+                                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                                        </action>
+                                                    </else>
+                                                </condition>
+                                            </normal>
+                                            <else>
+                                                <action id="selectDestWaypoint">
+                                                    <string id="name">UPPERLANE</string>
+                                                    <string id="team" values="ownenemy">OWN_TEAM</string>
+                                                </action>
+                                            </else>
+                                        </condition>
+                                    </else>
+                                </condition>
+                            </else>
+                        </condition>
+                    </normal>
+                    <else>
+                        <condition id="checkCounter">
+                            <string id="id">lane</string>
+                            <string id="value">2</string>
+                            <string id="compare method" values="valuecompare">equal</string>
+                            <normal>
+                                <condition id="getBoolEquals">
+                                    <string id="id">enemyTower1Lane2</string>
+                                    <string id="value" values="yesno">yes</string>
+                                    <normal>
+                                        <action id="selectDestWaypoint">
+                                            <string id="name">BOTTOMLANE</string>
+                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                        </action>
+                                    </normal>
+                                    <else>
+                                        <condition id="getBoolEquals">
+                                            <string id="id">enemyTower2Lane2</string>
+                                            <string id="value" values="yesno">yes</string>
+                                            <normal>
+                                                <action id="selectDestWaypoint">
+                                                    <string id="name">BOTTOMLANESECOND</string>
+                                                    <string id="team" values="ownenemy">ENEMY_TEAM</string>
+                                                </action>
+                                                <condition id="isNextWaypointInArea">
+                                                    <float id="xOffset">0.00</float>
+                                                    <float id="yOffset">0.00</float>
+                                                    <float id="width">2.00</float>
+                                                    <float id="height">2.00</float>
+                                                    <else>
+                                                        <action id="selectDestWaypoint">
+                                                            <string id="name">BOTTOMLANE</string>
                                                             <string id="team" values="ownenemy">OWN_TEAM</string>
                                                         </action>
                                                     </else>
@@ -180,7 +265,7 @@
                                                             <float id="height">2.00</float>
                                                             <else>
                                                                 <action id="selectDestWaypoint">
-                                                                    <string id="name">UPPERLANESECOND</string>
+                                                                    <string id="name">BOTTOMLANESECOND</string>
                                                                     <string id="team" values="ownenemy">ENEMY_TEAM</string>
                                                                 </action>
                                                             </else>
@@ -192,7 +277,7 @@
                                                             <float id="height">2.00</float>
                                                             <else>
                                                                 <action id="selectDestWaypoint">
-                                                                    <string id="name">UPPERLANE</string>
+                                                                    <string id="name">BOTTOMLANE</string>
                                                                     <string id="team" values="ownenemy">OWN_TEAM</string>
                                                                 </action>
                                                             </else>
@@ -200,7 +285,7 @@
                                                     </normal>
                                                     <else>
                                                         <action id="selectDestWaypoint">
-                                                            <string id="name">UPPERLANE</string>
+                                                            <string id="name">BOTTOMLANE</string>
                                                             <string id="team" values="ownenemy">OWN_TEAM</string>
                                                         </action>
                                                     </else>
@@ -210,93 +295,8 @@
                                     </else>
                                 </condition>
                             </normal>
-                            <else>
-                                <condition id="checkCounter">
-                                    <string id="id">lane</string>
-                                    <string id="value">2</string>
-                                    <string id="compare method" values="valuecompare">equal</string>
-                                    <normal>
-                                        <condition id="getBoolEquals">
-                                            <string id="id">enemyTower1Lane2</string>
-                                            <string id="value" values="yesno">yes</string>
-                                            <normal>
-                                                <action id="selectDestWaypoint">
-                                                    <string id="name">BOTTOMLANE</string>
-                                                    <string id="team" values="ownenemy">OWN_TEAM</string>
-                                                </action>
-                                            </normal>
-                                            <else>
-                                                <condition id="getBoolEquals">
-                                                    <string id="id">enemyTower2Lane2</string>
-                                                    <string id="value" values="yesno">yes</string>
-                                                    <normal>
-                                                        <action id="selectDestWaypoint">
-                                                            <string id="name">BOTTOMLANESECOND</string>
-                                                            <string id="team" values="ownenemy">ENEMY_TEAM</string>
-                                                        </action>
-                                                        <condition id="isNextWaypointInArea">
-                                                            <float id="xOffset">0.00</float>
-                                                            <float id="yOffset">0.00</float>
-                                                            <float id="width">2.00</float>
-                                                            <float id="height">2.00</float>
-                                                            <else>
-                                                                <action id="selectDestWaypoint">
-                                                                    <string id="name">BOTTOMLANE</string>
-                                                                    <string id="team" values="ownenemy">OWN_TEAM</string>
-                                                                </action>
-                                                            </else>
-                                                        </condition>
-                                                    </normal>
-                                                    <else>
-                                                        <condition id="getBoolEquals">
-                                                            <string id="id">enemyTower3</string>
-                                                            <string id="value" values="yesno">yes</string>
-                                                            <normal>
-                                                                <action id="selectDestWaypoint">
-                                                                    <string id="name">FINALSTAND</string>
-                                                                    <string id="team" values="ownenemy">ENEMY_TEAM</string>
-                                                                </action>
-                                                                <condition id="isNextWaypointInArea">
-                                                                    <float id="xOffset">0.00</float>
-                                                                    <float id="yOffset">0.00</float>
-                                                                    <float id="width">2.00</float>
-                                                                    <float id="height">2.00</float>
-                                                                    <else>
-                                                                        <action id="selectDestWaypoint">
-                                                                            <string id="name">BOTTOMLANESECOND</string>
-                                                                            <string id="team" values="ownenemy">ENEMY_TEAM</string>
-                                                                        </action>
-                                                                    </else>
-                                                                </condition>
-                                                                <condition id="isNextWaypointInArea">
-                                                                    <float id="xOffset">0.00</float>
-                                                                    <float id="yOffset">0.00</float>
-                                                                    <float id="width">2.00</float>
-                                                                    <float id="height">2.00</float>
-                                                                    <else>
-                                                                        <action id="selectDestWaypoint">
-                                                                            <string id="name">BOTTOMLANE</string>
-                                                                            <string id="team" values="ownenemy">OWN_TEAM</string>
-                                                                        </action>
-                                                                    </else>
-                                                                </condition>
-                                                            </normal>
-                                                            <else>
-                                                                <action id="selectDestWaypoint">
-                                                                    <string id="name">BOTTOMLANE</string>
-                                                                    <string id="team" values="ownenemy">OWN_TEAM</string>
-                                                                </action>
-                                                            </else>
-                                                        </condition>
-                                                    </else>
-                                                </condition>
-                                            </else>
-                                        </condition>
-                                    </normal>
-                                </condition>
-                            </else>
                         </condition>
-                    </normal>
+                    </else>
                 </condition>
                 <action id="executeBehaviourTree">
                     <string id="fileName">Mod_IgnotisAI_GoToWaypoint</string>
@@ -306,7 +306,7 @@
         </root>
     </behaviour>
     <behaviour>
-        <action id="adjustCounter" x="2416" y="2493">
+        <action id="adjustCounter" x="2591" y="2493">
             <string id="id">lane</string>
             <string id="value">2</string>
             <string id="adjust method" values="valueadjust">set</string>
