@@ -116,10 +116,10 @@
                                     <normal>
                                         <condition id="isTargetInArea">
                                             <string id="condition" values="yesno">no</string>
-                                            <float id="xOffset">0.08</float>
+                                            <float id="xOffset">0.00</float>
                                             <float id="yOffset">0.00</float>
-                                            <float id="width">0.16</float>
-                                            <float id="height">0.16</float>
+                                            <float id="width">0.32</float>
+                                            <float id="height">0.32</float>
                                             <string id="check line of sight" values="yesno">no</string>
                                             <string id="ignore invisibility" values="yesno">no</string>
                                             <normal>
@@ -142,10 +142,10 @@
                                             <string id="check green obstacles only" values="yesno">no</string>
                                             <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;NEUTRAL_TEAM;;</string>
                                             <string id="areaName"></string>
-                                            <float id="xOffset">0.05</float>
-                                            <float id="yOffset">-0.05</float>
-                                            <float id="width">0.10</float>
-                                            <float id="height">0.10</float>
+                                            <float id="xOffset">0.00</float>
+                                            <float id="yOffset">0.00</float>
+                                            <float id="width">0.16</float>
+                                            <float id="height">0.02</float>
                                             <string id="check line of sight" values="yesno">no</string>
                                             <string id="ignore invisibility" values="yesno">no</string>
                                             <string id="Comment">Check for enemies and neutrals</string>
@@ -156,10 +156,10 @@
                                             <string id="check green obstacles only" values="yesno">no</string>
                                             <string id="teams" values="teams" multiselect="true">OWN_TEAM;;ENEMY_TEAM;;NEUTRAL_TEAM;;</string>
                                             <string id="areaName"></string>
-                                            <float id="xOffset">0.05</float>
+                                            <float id="xOffset">0.04</float>
                                             <float id="yOffset">0.00</float>
-                                            <float id="width">0.10</float>
-                                            <float id="height">0.10</float>
+                                            <float id="width">0.08</float>
+                                            <float id="height">0.05</float>
                                             <string id="check line of sight" values="yesno">no</string>
                                             <string id="ignore invisibility" values="yesno">no</string>
                                             <string id="Comment">Check for obstacles</string>
