@@ -20,10 +20,27 @@
                             <string id="check line of sight" values="yesno">no</string>
                             <string id="ignore invisibility" values="yesno">no</string>
                         </action>
-                        <action id="executeBehaviourTree">
-                            <string id="fileName">Mod_IgnotisAI_GoToTarget</string>
-                            <string id="Minimized">yes</string>
-                        </action>
+                        <condition id="isTargetInArea">
+                            <string id="condition" values="yesno">no</string>
+                            <float id="xOffset">0.00</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.50</float>
+                            <float id="height">0.50</float>
+                            <string id="check line of sight" values="yesno">no</string>
+                            <string id="ignore invisibility" values="yesno">no</string>
+                            <normal>
+                                <action id="executeBehaviourTree">
+                                    <string id="fileName">Mod_IgnotisAI_GoToTarget</string>
+                                    <string id="Minimized">yes</string>
+                                </action>
+                            </normal>
+                            <else>
+                                <action id="setBool">
+                                    <string id="id">failed</string>
+                                    <string id="value" values="flagtoggle">yes</string>
+                                </action>
+                            </else>
+                        </condition>
                     </normal>
                     <else>
                         <action id="setBool">
@@ -34,11 +51,11 @@
                     <or>
                         <condition id="isCharacterInArea">
                             <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
-                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
                             <string id="class"></string>
-                            <string id="condition" values="charactervaluesCheckable">health minus dot percentage</string>
-                            <string id="comparison" values="valuecompare">less</string>
-                            <float id="value">40.00</float>
+                            <string id="condition" values="charactervaluesCheckable">health</string>
+                            <string id="comparison" values="valuecompare">greater</string>
+                            <float id="value">0.00</float>
                             <string id="character minimum"></string>
                             <float id="xOffset">0.00</float>
                             <float id="yOffset">0.00</float>
@@ -48,11 +65,11 @@
                         </condition>
                         <condition id="isCharacterInArea">
                             <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
-                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
                             <string id="class"></string>
-                            <string id="condition" values="charactervaluesCheckable">health</string>
-                            <string id="comparison" values="valuecompare">greater</string>
-                            <float id="value">0.00</float>
+                            <string id="condition" values="charactervaluesCheckable">health minus dot percentage</string>
+                            <string id="comparison" values="valuecompare">less</string>
+                            <float id="value">40.00</float>
                             <string id="character minimum"></string>
                             <float id="xOffset">0.00</float>
                             <float id="yOffset">0.00</float>
