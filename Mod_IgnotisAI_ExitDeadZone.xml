@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<enemy>
+    <behaviour>
+        <root x="110" y="40">
+            <string id="Comment">Exit waypoint &quot;dead zones,&quot; where I can&apos;t find my next node</string>
+            <normal>
+                <action id="pressStick">
+                    <string id="direction" values="directions">FORWARD</string>
+                    <float id="duration in seconds">0.10</float>
+                </action>
+                <orblock>
+                    <normal>
+                        <action id="setBool">
+                            <string id="id">jump</string>
+                            <string id="value" values="flagtoggle">yes</string>
+                        </action>
+                    </normal>
+                    <or>
+                        <condition id="isInArea">
+                            <string id="condition" values="yesno">yes</string>
+                            <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;CREEPS;;</string>
+                            <string id="check green obstacles only" values="yesno">no</string>
+                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;NEUTRAL_TEAM;;</string>
+                            <string id="areaName"></string>
+                            <float id="xOffset">0.00</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.16</float>
+                            <float id="height">0.02</float>
+                            <string id="check line of sight" values="yesno">no</string>
+                            <string id="ignore invisibility" values="yesno">no</string>
+                            <string id="Comment">Check for enemies and neutrals</string>
+                        </condition>
+                        <condition id="isInArea">
+                            <string id="condition" values="yesno">yes</string>
+                            <string id="collision groups" values="collison groups" multiselect="true">INVINCIBLE_OBSTACLES;;DESTROYABLE_OBSTACLES;;</string>
+                            <string id="check green obstacles only" values="yesno">no</string>
+                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;ENEMY_TEAM;;NEUTRAL_TEAM;;</string>
+                            <string id="areaName"></string>
+                            <float id="xOffset">0.04</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.08</float>
+                            <float id="height">0.05</float>
+                            <string id="check line of sight" values="yesno">no</string>
+                            <string id="ignore invisibility" values="yesno">no</string>
+                            <string id="Comment">Check for obstacles</string>
+                        </condition>
+                    </or>
+                </orblock>
+                <action id="executeBehaviourTree">
+                    <string id="fileName">Mod_IgnotisAI_Jump</string>
+                    <string id="Minimized">yes</string>
+                </action>
+            </normal>
+        </root>
+    </behaviour>
+</enemy>
